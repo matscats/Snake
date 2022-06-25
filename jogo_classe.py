@@ -24,7 +24,7 @@ class Jogo:
             self.cobra.aumenta_cobra()
 
     def colisao(self):
-        if self.cobra.corpo[0][0] < 0 or self.cobra.corpo[0][0] > numero_quadrado or self.cobra.corpo[0][1]<0 or self.cobra.corpo[0][1]>=numero_quadrado:
+        if self.cobra.corpo[0][0] < 0 or self.cobra.corpo[0][0] > numero_quadrado or self.cobra.corpo[0][1]<0 or self.cobra.corpo[0][1]>numero_quadrado:
             self.game_over()
 
         for quadrado in self.cobra.corpo[1:]:
