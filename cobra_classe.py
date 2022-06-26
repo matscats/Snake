@@ -5,13 +5,14 @@ class Cobra:
 
     def __init__(self):
 
-        self.corpo = [[5,10],[6,10],[7,10]]
-        self.direcao = [-1,0] 
+        self.corpo = [[8,10],[9,10],[10,10]]
+        self.direcao = [-1,0]
+        self.cor =  (255,140,0)
 
     def desenha_cobra(self):
         for quadrado in self.corpo:
             corpo_quadrado = pygame.Rect(quadrado[0]*lado_quadrado,quadrado[1]*lado_quadrado,lado_quadrado,lado_quadrado)
-            pygame.draw.rect(tela,(255,140,0), corpo_quadrado)
+            pygame.draw.rect(tela,self.cor,corpo_quadrado)
 
     def move_cobra(self):
         corpo_cc = self.corpo[:-1]
