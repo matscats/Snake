@@ -8,5 +8,6 @@ relogio = pygame.time.Clock()
 lado_quadrado = 25
 numero_quadrado = 20
 atualiza_tela = pygame.USEREVENT
-cor_grama = (255,255,255)
-
+cor_tela = (175,215,70)
+cor_fruta = (255,0,0)
+tela_numero = 0

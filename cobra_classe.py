@@ -7,12 +7,20 @@ class Cobra:
 
         self.corpo = [[8,10],[9,10],[10,10]]
         self.direcao = [-1,0]
-        self.cor =  (255,140,0)
+        self.cor_1 =  (255, 116, 0)
+        self.cor_2 =  (255, 155, 0)
+        self.cont = 0
 
     def desenha_cobra(self):
         for quadrado in self.corpo:
-            corpo_quadrado = pygame.Rect(quadrado[0]*lado_quadrado,quadrado[1]*lado_quadrado,lado_quadrado,lado_quadrado)
-            pygame.draw.rect(tela,self.cor,corpo_quadrado)
+
+            if self.corpo.index(quadrado)%2==0:
+                corpo_quadrado = pygame.Rect(quadrado[0]*lado_quadrado,quadrado[1]*lado_quadrado,lado_quadrado,lado_quadrado)
+                pygame.draw.rect(tela,self.cor_1,corpo_quadrado)
+
+            elif self.corpo.index(quadrado)%2!=0:
+                corpo_quadrado = pygame.Rect(quadrado[0]*lado_quadrado,quadrado[1]*lado_quadrado,lado_quadrado,lado_quadrado)
+                pygame.draw.rect(tela,self.cor_2,corpo_quadrado)
 
     def move_cobra(self):
         corpo_cc = self.corpo[:-1]
