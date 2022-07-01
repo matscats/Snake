@@ -6,7 +6,7 @@ from jogo_classe import Jogo
 #Setup do jogo
 pygame.init()
 pygame.display.set_caption('Jogo da cobrinha')
-pygame.time.set_timer(config.atualiza_tela,120)
+pygame.time.set_timer(config.atualiza_tela,130)
 jogo = Jogo()
 
 #Loop do jogo

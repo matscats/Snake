@@ -1,5 +1,6 @@
 from cobra_classe import *
 from fruta_classe import *
+from config import cor_grama
 import sys
 
 class Jogo:
@@ -33,7 +34,7 @@ class Jogo:
                 self.fruta.spawn_fruta()
 
     def colisao(self):
-        if self.cobra.corpo[0][0] < 0 or self.cobra.corpo[0][0] > numero_quadrado or self.cobra.corpo[0][1]<0 or self.cobra.corpo[0][1]>numero_quadrado:
+        if self.cobra.corpo[0][0] < 0 or self.cobra.corpo[0][0] >= numero_quadrado or self.cobra.corpo[0][1]<0 or self.cobra.corpo[0][1]>=numero_quadrado:
             self.game_over()
 
         for quadrado in self.cobra.corpo[1:]:
@@ -55,5 +56,9 @@ class Jogo:
 
                 for i in range(numero_quadrado):
 
-                    quadrado_grama = pygame.Rect(i*lado_quadrado,j*lado_quadrado,lado_quadrado,lado_quadrado)
-                    pygame.draw.rect(tela,(167,209,61),quadrado_grama)
+                    if i%2==0:    
+
+                        quadrado_grama = pygame.Rect(i*lado_quadrado,j*lado_quadrado,lado_quadrado,lado_quadrado)
+                        pygame.draw.rect(tela,cor_grama,quadrado_grama)
+
+

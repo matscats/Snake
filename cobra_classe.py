@@ -1,14 +1,14 @@
 import pygame
-from config import lado_quadrado, tela
+from config import lado_quadrado, tela, cobra_cor_1, cobra_cor_2
 
 class Cobra:
 
     def __init__(self):
 
-        self.corpo = [[8,10],[9,10],[10,10]]
+        self.corpo = [[18,10],[19,10],[20,10]]
         self.direcao = [-1,0]
-        self.cor_1 =  (255, 116, 0)
-        self.cor_2 =  (255, 155, 0)
+        self.cor_1 =  cobra_cor_1
+        self.cor_2 =  cobra_cor_2
         self.cont = 0
 
     def desenha_cobra(self):
