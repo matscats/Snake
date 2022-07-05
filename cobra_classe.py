@@ -18,7 +18,7 @@ class Cobra:
                 corpo_quadrado = pygame.Rect(quadrado[0]*lado_quadrado,quadrado[1]*lado_quadrado,lado_quadrado,lado_quadrado)
                 pygame.draw.rect(tela,self.cor_1,corpo_quadrado)
 
-            elif self.corpo.index(quadrado)%2!=0:
+            else:
                 corpo_quadrado = pygame.Rect(quadrado[0]*lado_quadrado,quadrado[1]*lado_quadrado,lado_quadrado,lado_quadrado)
                 pygame.draw.rect(tela,self.cor_2,corpo_quadrado)
 
@@ -30,6 +30,6 @@ class Cobra:
 
     def aumenta_cobra(self):
         corpo_cc = self.corpo[:]
-        novo_quadrado = [corpo_cc[0][0]+self.direcao[0],corpo_cc[0][1]+self.direcao[1]]
-        corpo_cc.insert(0,novo_quadrado)
+        novo_rabo = [corpo_cc[len(corpo_cc)-1][0]+self.direcao[0],corpo_cc[len(corpo_cc)-1][1]+self.direcao[1]]
+        corpo_cc.insert(len(corpo_cc)-1,novo_rabo)
         self.corpo = corpo_cc[:]

@@ -6,11 +6,11 @@ from jogo_classe import Jogo
 #Setup do jogo
 pygame.init()
 pygame.display.set_caption('Jogo da cobrinha')
-pygame.time.set_timer(config.atualiza_tela,130)
+pygame.time.set_timer(config.atualiza_tela,140)
 jogo = Jogo()
 
 #Loop do jogo
-while True:
+while config.game_over == False:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
