@@ -10,12 +10,12 @@ pygame.time.set_timer(config.atualiza_tela,140)
 jogo = Jogo()
 
 #Loop do jogo
-while config.game_over == False:
+while True:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-            sys.exit()
+            sys.exit()    
 
         if event.type == config.atualiza_tela:
             jogo.atualiza()
@@ -34,8 +34,8 @@ while config.game_over == False:
             if event.key == pygame.K_LEFT and jogo.cobra.direcao[0] != 1:
                 jogo.cobra.direcao = [-1,0]
 
-    config.tela.fill(config.cor_tela)
-    jogo.desenho()
+        config.tela.fill(config.cor_tela)
+        jogo.desenho()
 
 
     pygame.display.flip()
