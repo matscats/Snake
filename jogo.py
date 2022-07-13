@@ -17,26 +17,34 @@ while True:
             pygame.quit()
             sys.exit()    
 
-        if event.type == config.atualiza_tela:
+        if event.type == config.atualiza_tela and config.tela_modo == 1:
             jogo.atualiza()
 
         if event.type == pygame.KEYDOWN:
 
-            if event.key == pygame.K_UP and jogo.cobra.direcao[1] != 1:
-                jogo.cobra.direcao = [0,-1]
+            #Telas do jogo
+            if event.key == pygame.K_SPACE and config.tela_modo != 1:
+                jogo.troca_telas()
+                    
+            #Jogo comandos
+            elif config.tela_modo == 1:    
 
-            if event.key == pygame.K_DOWN and jogo.cobra.direcao[1] != -1:
-                jogo.cobra.direcao = [0,1]
+                if event.key == pygame.K_UP and jogo.cobra.direcao[1] != 1:
+                    jogo.cobra.direcao = [0,-1]
 
-            if event.key == pygame.K_RIGHT and jogo.cobra.direcao[0] != -1:
-                jogo.cobra.direcao = [1,0]
+                if event.key == pygame.K_DOWN and jogo.cobra.direcao[1] != -1:
+                    jogo.cobra.direcao = [0,1]
 
-            if event.key == pygame.K_LEFT and jogo.cobra.direcao[0] != 1:
-                jogo.cobra.direcao = [-1,0]
+                if event.key == pygame.K_RIGHT and jogo.cobra.direcao[0] != -1:
+                    jogo.cobra.direcao = [1,0]
+
+                if event.key == pygame.K_LEFT and jogo.cobra.direcao[0] != 1:
+                    jogo.cobra.direcao = [-1,0]
+
+            
 
         config.tela.fill(config.cor_tela)
         jogo.desenho()
-
 
     pygame.display.flip()
     config.relogio.tick(config.fps)

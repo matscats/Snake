@@ -13,6 +13,9 @@ cor_grama = (107,182,50)
 cor_fruta = (255,0,0)
 cobra_cor_1 = (255, 116, 0)
 cobra_cor_2 = (255, 155, 0)
+tela_modo = 0
+menu_imagem = pygame.image.load('arquivos/menu.png').convert_alpha()
+gameover_imagem = pygame.image.load('arquivos/gameover.png').convert_alpha()
 
 
 
