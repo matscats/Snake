@@ -1,7 +1,7 @@
 import pygame
 import sys
 import config 
-from jogo_classe import Jogo
+from JogoClasse import Jogo
 
 #Setup do jogo
 pygame.init()
@@ -18,13 +18,13 @@ while True:
             sys.exit()    
 
         if event.type == config.atualiza_tela and config.tela_modo == 1:
-            jogo.atualiza()
+            jogo.Atualiza()
 
         if event.type == pygame.KEYDOWN:
 
             #Telas do jogo
             if event.key == pygame.K_SPACE and config.tela_modo != 1:
-                jogo.troca_telas()
+                jogo.TrocaTelas()
                     
             #Jogo comandos
             elif config.tela_modo == 1:    
@@ -44,7 +44,7 @@ while True:
             
 
         config.tela.fill(config.cor_tela)
-        jogo.desenho()
+        jogo.Desenho()
 
     pygame.display.flip()
     config.relogio.tick(config.fps)

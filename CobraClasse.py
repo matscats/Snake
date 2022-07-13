@@ -10,27 +10,27 @@ class Cobra:
         self.cores =  [config.cobra_cor_1,config.cobra_cor_2]
         self.cont = 0
 
-    def desenha_cobra(self):
+    def DesenhaCobra(self):
         for quadrado in self.corpo:
 
             if self.corpo.index(quadrado)%2==0:
-                self.cria_quadrado(self.cores[0],quadrado)
+                self.CriaQuadrado(self.cores[0],quadrado)
 
             else:
-                self.cria_quadrado(self.cores[1],quadrado)
+                self.CriaQuadrado(self.cores[1],quadrado)
 
-    def move_cobra(self):
+    def MoveCobra(self):
         corpo_cc = self.corpo[:-1]
         nova_cabeca = [corpo_cc[0][0]+self.direcao[0],corpo_cc[0][1]+self.direcao[1]]
         corpo_cc.insert(0,nova_cabeca)
         self.corpo = corpo_cc[:]
 
-    def aumenta_cobra(self):
+    def AumentaCobra(self):
         corpo_cc = self.corpo[:]
         novo_rabo = [corpo_cc[len(corpo_cc)-1][0]+self.direcao[0],corpo_cc[len(corpo_cc)-1][1]+self.direcao[1]]
         corpo_cc.insert(len(corpo_cc)-1,novo_rabo)
         self.corpo = corpo_cc[:]
 
-    def cria_quadrado(self,cor,quadrado):
+    def CriaQuadrado(self,cor,quadrado):
          corpo_quadrado = pygame.Rect(quadrado[0]*config.lado_quadrado,quadrado[1]*config.lado_quadrado,config.lado_quadrado,config.lado_quadrado)
          pygame.draw.rect(config.tela,cor,corpo_quadrado)
