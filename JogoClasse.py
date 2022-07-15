@@ -9,7 +9,6 @@ class Jogo:
         self.cobra = Cobra()
         self.fruta = Fruta()
         self.som = pygame.mixer.Sound('arquivos/beep.mp3')
-        self.pontos = 0  
 
     def Desenho(self):
 
@@ -35,7 +34,6 @@ class Jogo:
             self.fruta.SpawnFruta()
             self.cobra.AumentaCobra()
             self.som.play()
-            self.pontos += 1
 
         for quadrado in self.cobra.corpo[1:]:
             if quadrado[0]==self.fruta.coord[0] and quadrado[1]==self.fruta.coord[1]:

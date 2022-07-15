@@ -8,7 +8,6 @@ class Cobra:
         self.corpo = [[18,10],[19,10],[20,10]]
         self.direcao = [-1,0]
         self.cores =  [config.cobra_cor_1,config.cobra_cor_2]
-        self.cont = 0
 
     def DesenhaCobra(self):
         for quadrado in self.corpo:

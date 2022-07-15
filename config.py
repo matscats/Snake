@@ -20,3 +20,4 @@ gameover_imagem = pygame.image.load('arquivos/gameover.png').convert_alpha()
 
 
 
+
