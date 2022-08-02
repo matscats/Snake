@@ -6,4 +6,4 @@
 
 
 
-_Autores: Mateus Cavalcanti && Rayane Bandeira_
+_Autor: Mateus Cavalcanti_
